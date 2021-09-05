@@ -1,0 +1,86 @@
+body {
+  background-color: rgb(249, 240, 220);
+  color: #333;
+  font-family: Sans-Serif;
+  line-height: 18px;
+  text-align: center;
+}
+
+#wrapper {
+  box-shadow: 0 0 10px rgba(0,0,0,.3);
+  margin: 16px auto;
+  max-width: 750;
+  padding: 2.25%; /* 18px / 800px */
+  width: 85%;
+}
+
+#background-image {
+    display: block;
+    margin-left: auto;
+    margin-right:auto;
+    position: relative;
+    top: 0%;
+    left: 0%;
+    z-index: 0;
+}
+
+#toilet-germs{
+  /* padding: 5px; */
+  width: 100px;
+  position: absolute;
+  top: 70%;
+  left: 27%;
+  z-index: 1;
+}
+
+#tub-dirt{
+  position: absolute;
+  width: 190px;
+  height: 50px;
+  position: absolute;
+  top: 77%;
+  left: 55%;
+  z-index: 1;
+}
+
+#dirty-laundry{
+  position: absolute;
+  z-index: 2;
+  width: 200px;
+  margin-left: auto;
+  top: 73%;
+  left: 60%;
+}
+
+#dirty-mirror{
+  position: absolute;
+  z-index: 2;
+  width: 75px;
+  height: 100px;
+  top: 32%;
+  left: 41%;
+}
+
+#dirt-pile{
+    position: absolute;
+    z-index: 2;
+    width: 250px;  
+    top: 72%;
+    left: 35% ;
+  }
+
+  #hand-splatter-1{
+    position: absolute;
+    z-index: 3;
+    width: 200px;  
+    top: 20%;
+    left: 25% ;
+  }
+
+  #hand-splatter-2{
+    position: absolute;
+    z-index: 3;
+    width: 200px;  
+    top: 40%;
+    left: 55% ;
+  }
