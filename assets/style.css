@@ -12,6 +12,7 @@ body {
   max-width: 750;
   padding: 2.25%; /* 18px / 800px */
   width: 85%;
+  position: relative;
 }
 
 #background-image {
@@ -19,18 +20,15 @@ body {
     margin-left: auto;
     margin-right:auto;
     position: relative;
-    top: 0%;
-    left: 0%;
-    z-index: 0;
+    z-index: 1;
 }
 
 #toilet-germs{
-  /* padding: 5px; */
   width: 100px;
   position: absolute;
-  top: 70%;
-  left: 27%;
-  z-index: 1;
+  top: 67%;
+  left: 14%;
+  z-index: 2;
 }
 
 #tub-dirt{
@@ -38,49 +36,103 @@ body {
   width: 190px;
   height: 50px;
   position: absolute;
-  top: 77%;
-  left: 55%;
-  z-index: 1;
+  top: 73%;
+  left: 58%;
+  z-index: 2;
 }
 
 #dirty-laundry{
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   width: 200px;
   margin-left: auto;
-  top: 73%;
-  left: 60%;
+  top: 70%;
+  left: 65%;
 }
 
 #dirty-mirror{
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   width: 75px;
   height: 100px;
-  top: 32%;
-  left: 41%;
+  top: 29%;
+  left: 36%;
 }
 
 #dirt-pile{
     position: absolute;
-    z-index: 2;
+    z-index: 3;
     width: 250px;  
-    top: 72%;
-    left: 35% ;
+    top: 70%;
+    left: 30% ;
   }
 
   #hand-splatter-1{
     position: absolute;
-    z-index: 3;
+    z-index: 4;
     width: 200px;  
     top: 20%;
-    left: 25% ;
+    left: 10% ;
   }
 
   #hand-splatter-2{
     position: absolute;
-    z-index: 3;
+    z-index: 4;
     width: 200px;  
     top: 40%;
     left: 55% ;
   }
+
+  #info {
+    position: absolute;
+    z-index: 2;
+    width: 100px;
+	height: 40px;
+	background-color: black;
+	margin: auto;
+    color: white;
+    border:#0FF thin solid;
+    top: 15%;
+    left: 80%;
+}
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 5;
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal */
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}

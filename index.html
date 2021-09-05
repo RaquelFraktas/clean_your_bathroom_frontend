@@ -5,11 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/style.css">
     <script src="./src/services/ApiService.js"></script>
+    <script src="./src/components/User.js"></script>
+    <script src="./src/components/Modal.js"></script>
     <script defer src="./src/index.js"></script>
     <title>Clean your bathroom</title>
 </head>
 <body>
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>Some text in the Modal..</p>
+    </div>
+  </div>
+
+
   <div id="wrapper">
+    <div id="info">
+      <span class="username">Username </span><br>
+      <span id="countdown">10</span>
+    </div>
+
   <h1 class="title">Clean your damn bathroom!!!!</h1>
     <img id="background-image"src="/Users/raquelfraktas/Development/code/Mod4/clean_your_bathroom/frontend/assets/images/clean-bathroom.png" alt="clean bathroom">
 
