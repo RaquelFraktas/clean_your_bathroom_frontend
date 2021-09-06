@@ -5,6 +5,8 @@ const modal = new Modal()
 
 // api.getUsers().then(console.log)
 
+
+
 let seconds = document.getElementById("countdown").textContent;
 const countDown= setInterval(function() {
   seconds--;
@@ -12,10 +14,10 @@ const countDown= setInterval(function() {
   if (seconds <= 0) clearInterval(countDown);
 }, 1000);
 
-const userLoggedin = () => {
-  document.getElementsByClassName("username")
-}
+// const userLoggedin = () => {
+//   document.getElementsByClassName("username")
+// }
 
-
+User.renderLogIn()
 
 

@@ -4,6 +4,10 @@ class Modal {
     return document.querySelector("#myModal")
   }
 
+  get modalContent(){
+      return document.querySelector(".modal-content")
+  }
+
   open = () => {
     this.modal.style.display= "block"
   }
