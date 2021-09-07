@@ -12,11 +12,13 @@ class ApiService {
     return fetch(this.api + "/users", {
     method: 'POST', 
     headers: {
-      'Content-Type': 'application/json',
+      'Content-Type': "application/json",
+      "Accept": "application/json"
     },
-      body: JSON.stringify(newUser),
+      body: JSON.stringify(newUser)
     })
       .then(response => response.json())
+
     }
   }
   
