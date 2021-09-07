@@ -11,6 +11,13 @@ class User{
 
   static setUser = (username) => {
     usernameDisplay.innerText= username
+    // this starts the countdown once you're logged in
+    let seconds = document.getElementById("countdown").textContent;
+    const countDown= setInterval(function() {
+    seconds--;
+    document.getElementById("countdown").textContent = seconds;
+    if (seconds <= 0) clearInterval(countDown);
+    }, 1000);
   }
 
 

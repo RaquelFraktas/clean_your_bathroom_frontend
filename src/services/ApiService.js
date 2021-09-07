@@ -9,6 +9,9 @@ class ApiService {
   getUsers = () => fetch("http://localhost:3000/users").then(res=> res.json());
 
   createUser = (newUser)=> {
+    // const {username, password} = newUser
+    // const bodyData = {username, password}
+    
     return fetch(this.api + "/users", {
     method: 'POST', 
     headers: {

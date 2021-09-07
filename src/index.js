@@ -7,16 +7,6 @@ const usernameDisplay =  document.querySelector(".username")
 // api.getUsers().then(console.log)
 
 
-// if (usernameDisplay.innerText== true){
-  let seconds = document.getElementById("countdown").textContent;
-  const countDown= setInterval(function() {
-    seconds--;
-    document.getElementById("countdown").textContent = seconds;
-    if (seconds <= 0) clearInterval(countDown);
-  }, 1000);
-// }
-
-
 
 User.renderLogIn()
 
