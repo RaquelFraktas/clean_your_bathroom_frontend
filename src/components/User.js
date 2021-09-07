@@ -4,7 +4,6 @@ class User{
 
   constructor(username, password){
       this.username = username
-      this._password= password
       this.constructor.all.push(this.username)
   }
 
@@ -25,7 +24,6 @@ class User{
     e.preventDefault()
     let logInCredentials= {
       username: e.target.username.value,
-      password: e.target.password.value
     }
     api.createUser(logInCredentials).then(user => {
         new User(user)
@@ -43,8 +41,6 @@ class User{
     <form>
     <label for="username">Username:</label><br>
     <input type="text" name= "username"><br>
-    <label for="password">Password:</label><br>
-    <input type="password" name= "password"><br>
     <input type="submit" value="Log in"><br>
     </form>
     `
