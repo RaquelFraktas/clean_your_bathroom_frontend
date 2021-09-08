@@ -20,18 +20,18 @@ class ApiService {
       .then(response => response.json())
     }
 
-     addScore = (score) => {
-      return fetch(this.api + "/users", {
-        method: 'PUT', 
-        headers: {
-          'Content-Type': "application/json",
-          "Accept": "application/json"
-        },
-          body: JSON.stringify(score)
-        })
-          .then(response => response.json())
-    
-        }
+
+  addScore = (score) => {
+   return fetch(this.api + "/users/" +currentUser.id, {
+     method: 'PUT', 
+     headers: {
+       'Content-Type': "application/json",
+       "Accept": "application/json"
+     },
+       body: JSON.stringify(score)
+     })
+       .then(response => response.json())  
+     }
 
 }
   

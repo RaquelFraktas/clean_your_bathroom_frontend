@@ -4,17 +4,15 @@ class GamePlay{
     this.allPoints = 0
   }
 
-  beginGame = (e) => {
-   toiletGerms.addEventListener("click", function(e){
-       console.log(e)
-       this.allPoints += 5
-       addPoints()
-    //    usernameDisplay
-   })  
+   beginGame = () => {
+    return toiletGerms.addEventListener("click", function(){
+    this.allPoints + 5;
+    GamePlay.addPoints()
+    })  
   }  
 
-   addPoints = () => {
-    app.addScore(this.allPoints).then(user => {
+  static addPoints = () => {
+    api.addScore(this.allPoints).then(user => {
     document.querySelector("#points").innerHTML= this.allPoints +" points";
     })
   }

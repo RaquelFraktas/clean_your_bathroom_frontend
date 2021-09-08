@@ -3,6 +3,7 @@ console.log("hello world")
 const api= new ApiService("http://localhost:3000")
 const modal = new Modal()
 const gamePlay = new GamePlay()
+let currentUser;
 
 const usernameDisplay =  document.querySelector(".username")
 

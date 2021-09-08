@@ -48,7 +48,8 @@ class User{
       username: e.target.username.value,
     }
     api.createUser(logInCredentials).then(user => {
-        new User(user)
+      new User(user)
+      currentUser= user
     })
     this.setUser(logInCredentials.username)
     modal.close()
