@@ -9,9 +9,6 @@ class ApiService {
   getUsers = () => fetch("http://localhost:3000/users").then(res=> res.json());
 
   createUser = (newUser)=> {
-    // const {username, password} = newUser
-    // const bodyData = {username, password}
-    
     return fetch(this.api + "/users", {
     method: 'POST', 
     headers: {
@@ -21,7 +18,22 @@ class ApiService {
       body: JSON.stringify(newUser)
     })
       .then(response => response.json())
-
     }
-  }
+
+     addScore = (score) => {
+      return fetch(this.api + "/users", {
+        method: 'PUT', 
+        headers: {
+          'Content-Type': "application/json",
+          "Accept": "application/json"
+        },
+          body: JSON.stringify(score)
+        })
+          .then(response => response.json())
+    
+        }
+
+}
   
+  
+ 

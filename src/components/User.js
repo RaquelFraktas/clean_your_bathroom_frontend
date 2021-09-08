@@ -7,6 +7,28 @@ class User{
       this.constructor.all.push(this.username)
   }
 
+  static renderLogIn = () => {
+    const logInButton = document.querySelector("#log-in-button");
+    const logIn = document.createElement("button");
+    logInButton.append(logIn);
+    logIn.innerText = "Click here to log in and play";
+    logInButton.addEventListener("click", this.logInForm)
+  }
+
+   static logInForm = (e) => {
+    e.preventDefault()
+    modal.modalContent.innerHTML=`
+    <h3>Log in or create an account</h3>
+    <form>
+    <label for="username">Username:</label><br>
+    <input type="text" name= "username"><br>
+    <input type="submit" value="Log in"><br>
+    </form>
+    `
+    modal.modalContent.querySelector("form").addEventListener("submit", this.handleSubmit)
+    modal.open()
+  };
+
 
   static setUser = (username) => {
     usernameDisplay.innerText= username
@@ -30,32 +52,8 @@ class User{
     })
     this.setUser(logInCredentials.username)
     modal.close()
+    gamePlay.beginGame()
   };
-
-
-
-   static logInForm = (e) => {
-    e.preventDefault()
-    modal.modalContent.innerHTML=`
-    <h3>Log in or create an account</h3>
-    <form>
-    <label for="username">Username:</label><br>
-    <input type="text" name= "username"><br>
-    <input type="submit" value="Log in"><br>
-    </form>
-    `
-    modal.modalContent.querySelector("form").addEventListener("submit", this.handleSubmit)
-    modal.open()
-  };
-
-
-  static renderLogIn = () => {
-    const logInButton = document.querySelector("#log-in-button");
-    const logIn = document.createElement("button");
-    logInButton.append(logIn);
-    logIn.innerText = "Click here to log in and play";
-    logInButton.addEventListener("click", this.logInForm)
-  }
 
 
 }
