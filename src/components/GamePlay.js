@@ -1,8 +1,8 @@
 class GamePlay{
 
-//   constructor (points){
-//     this.allPoints = points
-//   }
+  constructor (){
+    this.gameOver = false
+  }
 
   beginGame = () => {
     toiletGerms.addEventListener("click", function(){
@@ -43,15 +43,18 @@ class GamePlay{
 
     setInterval(function(){ 
       GamePlay.addPoints()
+      timesUp()
 
     }, 10000);
     
   }
 
-
   timesUp = () =>{
+    this.gameOver = true
     const dirtyItemsChildren = dirtyItems.children
     const dirtyItemsChildrenArray = [...dirtyItemsChildren]
+
+    dirtyItemsChildrenArray.forEach((item) => { item.cloneNode(true) })
 
   }
 
