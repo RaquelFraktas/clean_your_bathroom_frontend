@@ -7,6 +7,7 @@ class GamePlay{
    beginGame = () => {
     return toiletGerms.addEventListener("click", function(){
     this.allPoints + 5;
+    console.log(this.allPoints)
     GamePlay.addPoints()
     })  
   }  

@@ -9,6 +9,7 @@ class ApiService {
   getUsers = () => fetch("http://localhost:3000/users").then(res=> res.json());
 
   createUser = (newUser)=> {
+    // newUser.id = usernameDisplay.id
     return fetch(this.api + "/users", {
     method: 'POST', 
     headers: {

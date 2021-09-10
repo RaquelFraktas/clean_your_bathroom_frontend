@@ -2,9 +2,10 @@ class User{
 
   static all = []
 
-  constructor(username, password){
+  constructor(username, id){
       this.username = username
-      this.constructor.all.push(this.username)
+      this.id = id
+      this.constructor.all.push(this)
   }
 
   static renderLogIn = () => {
@@ -42,6 +43,8 @@ class User{
   }
 
 
+  // static find = (id) => this.all.find(user => user.id == id)
+
   static handleSubmit = (e) =>{
     e.preventDefault()
     let logInCredentials= {
@@ -49,7 +52,9 @@ class User{
     }
     api.createUser(logInCredentials).then(user => {
       new User(user)
-      currentUser= user
+      this.id = user.id
+      usernameDisplay.setAttribute("data-id", this.id)
+      currentUser= this
     })
     this.setUser(logInCredentials.username)
     modal.close()
