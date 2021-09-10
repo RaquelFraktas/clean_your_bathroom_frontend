@@ -23,7 +23,7 @@ class ApiService {
 
 
   addScore = (score) => {
-    console.log(currentUser.id)
+    // console.log(currecntUser.id)
    return fetch(this.api + "/users/" +currentUser.id, {
      method: 'PUT', 
      headers: {

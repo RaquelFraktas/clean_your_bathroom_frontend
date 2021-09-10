@@ -26,7 +26,7 @@ body {
 #toilet-germs{
   width: 100px;
   position: absolute;
-  top: 67%;
+  top: 69%;
   left: 14%;
   z-index: 2;
 }
@@ -36,7 +36,7 @@ body {
   width: 190px;
   height: 50px;
   position: absolute;
-  top: 73%;
+  top: 77%;
   left: 58%;
   z-index: 2;
 }
@@ -46,7 +46,7 @@ body {
   z-index: 3;
   width: 200px;
   margin-left: auto;
-  top: 70%;
+  top: 72%;
   left: 65%;
 }
 
@@ -55,7 +55,7 @@ body {
   z-index: 3;
   width: 75px;
   height: 100px;
-  top: 29%;
+  top: 33%;
   left: 36%;
 }
 
@@ -79,7 +79,7 @@ body {
     position: absolute;
     z-index: 4;
     width: 200px;  
-    top: 40%;
+    top: 42%;
     left: 55% ;
   }
 
@@ -92,7 +92,7 @@ body {
 	margin: auto;
     color: white;
     border:#0FF thin solid;
-    top: 15%;
+    top: 20%;
     left: 80%;
 }
 
