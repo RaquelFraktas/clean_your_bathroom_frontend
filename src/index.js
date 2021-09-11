@@ -7,6 +7,7 @@ const gamePlay = new GamePlay()
 let currentUser;
 let allPoints= 0;
 
+const wrapper = document.querySelector("#wrapper")
 const usernameDisplay =  document.querySelector(".username")
 const countdown = document.querySelector("#countdown")
 const dirtyItems = document.querySelector(".needs-cleaning")

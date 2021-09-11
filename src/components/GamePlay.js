@@ -31,6 +31,7 @@ class GamePlay{
         //write a conditional function that takes in a number of points, and adds a number of points if the game is still running
     setInterval(function(){ 
       this.gameOver = true
+      GamePlay.timesUp()
     }, 10000);
     
   }
@@ -40,35 +41,31 @@ class GamePlay{
     element.remove()
     if (!this.gameOver){
       GamePlay.addPoints()
+    } else{
+      GamePlay.gameOver()
     }
   }
 
-  timesUp = () =>{
-    this.gameOver = true
+  static timesUp = () =>{
     const dirtyItemsChildren = dirtyItems.children
     const dirtyItemsChildrenArray = [...dirtyItemsChildren]
-    dirtyItemsChildrenArray.forEach((item) => { item.cloneNode(true) })
-
+    console.log(dirtyItemsChildrenArray)
+    dirtyItemsChildrenArray.forEach((item) => {
+        item.removeEventListener("click",addPointsAndRemoveElement, true)
+        item.removeEventListener("dblclick",addPointsAndRemoveElement, true)
+    })
   }
 
   static addPoints = () => {
     api.addScore(allPoints).then(user => {
-      
       document.querySelector("#points").innerHTML= allPoints +" points";
     })
   }
-
-
   
-
-  //   static gameOver = () => {
-//     dirtyItems.setAttribute("onchange", gameOver)
-//     for (let i= 0; i < dirtyItems.childElementCount; i++){
-//         if (dirtyItems.childElementCount === 0) {
-//           GamePlay.addPoints()
-//         }
-//       }
-//   }
+  gameOver = () => {
+      wrapper.innerHTML = "game over"
+    
+      }
 
 }
 
