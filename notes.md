@@ -21,3 +21,13 @@
     //     console.log(error.message)
     // })
 //   }
+
+
+//   static timesUp = () =>{
+//     const dirtyItemsChildren = dirtyItems.children
+//     const dirtyItemsChildrenArray = [...dirtyItemsChildren]
+//     dirtyItemsChildrenArray.forEach((item) => {
+//         item.removeEventListener("click",addPointsAndRemoveElement)
+//         // item.removeEventListener("dblclick",addPointsAndRemoveElement)
+//     })
+//   }

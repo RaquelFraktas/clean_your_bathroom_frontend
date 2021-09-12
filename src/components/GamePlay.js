@@ -12,7 +12,7 @@ class GamePlay{
       GamePlay.addPointsAndRemoveElement(100, handSplatter1)
     }),
     handSplatter2.addEventListener("click", function (){
-      GamePlay.addPointsAndRemoveElement(100, handSplatter2)
+     GamePlay.addPointsAndRemoveElement(100, handSplatter2)
     }), 
     dirtyLaundry.addEventListener("click", function (){
       GamePlay.addPointsAndRemoveElement(75, dirtyLaundry)
@@ -26,35 +26,34 @@ class GamePlay{
     tubDirt.addEventListener("dblclick", function (){
       GamePlay.addPointsAndRemoveElement(125,tubDirt)
     }),
-        // add conditional to see if game is over, then increment the points
         //have an array of objects, element is x, and it's score is y
-        //write a conditional function that takes in a number of points, and adds a number of points if the game is still running
     setInterval(function(){ 
-      this.gameOver = true
-      GamePlay.timesUp()
+      GamePlay.gameOver = true
+      GamePlay.gameEnd()
+    //   why wont this work?
     }, 10000);
     
   }
 
   static addPointsAndRemoveElement = (points, element) => {
-    allPoints += points;
-    element.remove()
-    if (!this.gameOver){
+      //this function would be undefined if it wasnt static, and being called with my event listeners
+      //why when i console.log(this.gameOver, it comes out undefined when it should be false in the begining?)
+      //calling any ths.constructor function in here comes out undefined. 
+      //why cant i use this as a nonclass?
+
+    if (GamePlay.gameOver){
+        // console.log(GamePlay.gameOver) isnt working?
+    //   this.gameEnd()
+      // can try to restart a new instance of this
+      //why cant i just call gameEnd()?
+
+    } else {
+      allPoints += points;
+      element.remove()
       GamePlay.addPoints()
-    } else{
-      GamePlay.gameOver()
     }
   }
 
-  static timesUp = () =>{
-    const dirtyItemsChildren = dirtyItems.children
-    const dirtyItemsChildrenArray = [...dirtyItemsChildren]
-    console.log(dirtyItemsChildrenArray)
-    dirtyItemsChildrenArray.forEach((item) => {
-        item.removeEventListener("click",addPointsAndRemoveElement, true)
-        item.removeEventListener("dblclick",addPointsAndRemoveElement, true)
-    })
-  }
 
   static addPoints = () => {
     api.addScore(allPoints).then(user => {
@@ -62,10 +61,12 @@ class GamePlay{
     })
   }
   
-  gameOver = () => {
-      wrapper.innerHTML = "game over"
-    
-      }
+  static gameEnd = () => {
+    modal.open()
+    modal.modalContent.innerHTML=`<h1>TIME'S UP</h1>`
+    // User.renderLogIn()
+
+  }
 
 }
 
