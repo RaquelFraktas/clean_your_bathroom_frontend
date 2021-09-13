@@ -59,8 +59,10 @@ class GamePlay{
 
 
   static addPoints = () => {
-    api.addScore(allPoints).then(points => {
-    console.log(points)
+    api.addScore(allPoints).then(scoreSubmittal => {
+        // console.log(scoreSubmittal)
+        //what do i do here?
+
     })
   }
   
@@ -68,12 +70,16 @@ class GamePlay{
     modal.open()
     modal.modalContent.innerHTML=`
     <h1>TIME'S UP</h1>
-    <button type="button" class="close-button">Close</button>
+    Your highscores:`
+    this.highScoreRender.listUserScores(currentUser)
+    //why cant i call it without `this`?
+
+    `<button type="button" class="close-button">Close</button>
     `
     document.querySelector(".close-button").addEventListener("click", function (){
-        location.reload()
+        location.reload();
+        // currentUser = undefined;
     })
-    // User.renderLogIn()
 
   }
 

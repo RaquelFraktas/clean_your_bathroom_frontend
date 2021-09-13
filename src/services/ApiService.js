@@ -4,9 +4,8 @@ class ApiService {
         this.api = api
     }
 
-//   getUsers = () => fetch("http://localhost:3000/users");
 
-  getUsers = () => fetch("http://localhost:3000/users").then(res=> res.json());
+  // getUsers = () => fetch("http://localhost:3000/users").then(res=> res.json());
 
   createUser = (newUser)=> {
     // newUser.id = usernameDisplay.id
@@ -23,7 +22,6 @@ class ApiService {
 
 
   addScore = (score) => {
-    // console.log(currecntUser.id)
    return fetch(this.api + "/users/" +currentUser.id, {
      method: 'PUT', 
      headers: {
@@ -35,7 +33,16 @@ class ApiService {
        .then(response => response.json())  
      }
 
-}
+  getUserScores = (user) => {
+    return fetch(this.api + "users" + user.id)
+    .then(response => response.json())
+    }
+  }  
+
+
+  
+
+
   
   
  
