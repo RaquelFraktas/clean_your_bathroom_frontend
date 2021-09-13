@@ -12,3 +12,5 @@ User:
 High_scores:
 -points
 -belongs_to User
+
+The backend repo for this game is here: https://github.com/RaquelFraktas/clean_your_bathroom_backend

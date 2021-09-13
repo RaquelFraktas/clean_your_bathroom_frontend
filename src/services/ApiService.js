@@ -22,8 +22,8 @@ class ApiService {
 
 
   addScore = (score) => {
-   return fetch(this.api + "/users/" +currentUser.id, {
-     method: 'PUT', 
+   return fetch(this.api + "/scores", {
+     method: 'POST', 
      headers: {
        'Content-Type': "application/json",
        "Accept": "application/json"
@@ -45,4 +45,5 @@ class ApiService {
 
   
   
- 
+  // fetch(this.api + "/users/" +currentUser.id,
+  // for scores
