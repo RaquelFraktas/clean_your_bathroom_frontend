@@ -7,9 +7,10 @@ class HighScoreRenderingService {
   listUserScores = () =>{
     api.getUserScores(currentUser)
     .then(data => {
+     debugger
         data.username
         data.scores.forEach(score => score.points)
     })
   }
-//how do i console log in the third fetch?
+
 }

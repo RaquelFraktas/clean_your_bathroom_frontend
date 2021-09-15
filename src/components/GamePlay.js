@@ -6,7 +6,9 @@ class GamePlay{
     this.user;
   }
 
-  beginGame = () => {
+  beginGame = (user) => {
+    this.user= user
+    //i assed this in, and passed currentUser as an arg when calling gamePlay.beginGame()
     toiletGerms.addEventListener("click", () =>{
       this.addPointsAndRemoveElement(50, toiletGerms)
     }),
@@ -30,8 +32,7 @@ class GamePlay{
     }),
         //have an array of objects, element is x, and it's score is y
     setTimeout( () => { 
-      this.user = currentUser
-      //why cant i save this.user = currentUser in constructor?
+      // this.user = currentUser
       this.gameOver = true
       this.addPoints()
       this.gameEnd()
@@ -56,18 +57,18 @@ class GamePlay{
     <h1>TIME'S UP</h1>
     Your highscores:
       ${highScoreRender.listUserScores()}
- 
+      //create a list and iterate through these scores
+ <ul> 
+ <li> fdsgfdg</li>
+ </ul>
     <button type="button" class="close-button">Close</button>
     `
-      // this.highScoreRender.listUserScores(currentUser)
-    //why cant i call it without `this`?
 
     document.querySelector(".close-button").addEventListener("click", function (){
         location.reload();
+        //find another way to reset user and score.
     })
 
   }
 
 }
-
-//components relate to something you show on the page

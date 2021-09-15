@@ -57,7 +57,7 @@ class User{
       currentUser = user 
       this.setUser(logInCredentials.username)
       modal.close()
-      gamePlay.beginGame()
+      gamePlay.beginGame(currentUser)
     })
     
     

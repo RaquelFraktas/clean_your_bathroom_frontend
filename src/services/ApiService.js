@@ -34,7 +34,7 @@ class ApiService {
      }
 
   getUserScores = (user) => {
-    return fetch(this.api + "users" + user.id)
+    return fetch(this.api + "/users/" + user.id)
     .then(response => response.json())
     }
   }  
