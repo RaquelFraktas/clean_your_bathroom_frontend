@@ -46,15 +46,8 @@ class GamePlay{
     }
   }
 
-
    addPoints = () => {
-     console.log(this)
-    api.addScore(this).then(scoreSubmittal => {
-        console.log(scoreSubmittal)
-        //what do i do here?
-        //how do i pass in a user as a param?
-
-    })
+    api.addScore(this) 
   }
   
   gameEnd = () => {
@@ -62,8 +55,8 @@ class GamePlay{
     modal.modalContent.innerHTML=`
     <h1>TIME'S UP</h1>
     Your highscores:
-  
-
+      ${highScoreRender.listUserScores()}
+ 
     <button type="button" class="close-button">Close</button>
     `
       // this.highScoreRender.listUserScores(currentUser)

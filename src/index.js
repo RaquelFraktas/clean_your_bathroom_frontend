@@ -6,7 +6,7 @@ let currentUser;
 const api= new ApiService("http://localhost:3000")
 const modal = new Modal()
 const gamePlay = new GamePlay()
-const highScoreRender = new HighScoreRenderingService(currentUser)
+const highScoreRender = new HighScoreRenderingService()
 
 const wrapper = document.querySelector("#wrapper")
 const usernameDisplay =  document.querySelector(".username")

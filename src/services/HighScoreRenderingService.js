@@ -4,14 +4,12 @@ class HighScoreRenderingService {
       this.user= user
   }
 
-  listUserScores = (user) =>{
-    api.getUserScores(user)
+  listUserScores = () =>{
+    api.getUserScores(currentUser)
     .then(data => {
-        username.value
-        scores.forEach(score => score.points)
-        console.log(data)
+        data.username
+        data.scores.forEach(score => score.points)
     })
-
   }
-
+//how do i console log in the third fetch?
 }
