@@ -21,14 +21,14 @@ class ApiService {
     }
 
 
-  addScore = (score) => {
+  addScore = (object) => {
    return fetch(this.api + "/scores", {
      method: 'POST', 
      headers: {
        'Content-Type': "application/json",
        "Accept": "application/json"
      },
-       body: JSON.stringify(score)
+       body: JSON.stringify(object)
      })
        .then(response => response.json())  
      }

@@ -53,12 +53,14 @@ class User{
     api.createUser(logInCredentials).then(user => {
       new User(user)
       this.id = user.id
-      usernameDisplay.setAttribute("data-id", this.id)
-      currentUser= this
+      usernameDisplay.setAttribute("data-id", this.id)   
+      currentUser = user 
+      this.setUser(logInCredentials.username)
+      modal.close()
+      gamePlay.beginGame()
     })
-    this.setUser(logInCredentials.username)
-    modal.close()
-    gamePlay.beginGame()
+    
+    
   };
 
 

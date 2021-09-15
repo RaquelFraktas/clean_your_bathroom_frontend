@@ -1,7 +1,7 @@
 console.log("hello world")
 
 let currentUser;
-let allPoints= 0;
+// let allPoints= 0;
 
 const api= new ApiService("http://localhost:3000")
 const modal = new Modal()

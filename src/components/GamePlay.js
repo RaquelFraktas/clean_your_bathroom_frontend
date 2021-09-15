@@ -2,6 +2,8 @@ class GamePlay{
 
   constructor (){
     this.gameOver = false
+    this.allPoints = 0
+    this.user;
   }
 
   beginGame = () => {
@@ -28,6 +30,8 @@ class GamePlay{
     }),
         //have an array of objects, element is x, and it's score is y
     setTimeout( () => { 
+      this.user = currentUser
+      //why cant i save this.user = currentUser in constructor?
       this.gameOver = true
       this.addPoints()
       this.gameEnd()
@@ -36,17 +40,19 @@ class GamePlay{
 
   addPointsAndRemoveElement = (points, element) => {
     if (!this.gameOver){
-      allPoints += points;
+      this.allPoints += points;
       element.remove()
-      document.querySelector("#points").innerHTML= allPoints +" points";
+      document.querySelector("#points").innerHTML= this.allPoints +" points";
     }
   }
 
-  
+
    addPoints = () => {
-    api.addScore(allPoints).then(scoreSubmittal => {
+     console.log(this)
+    api.addScore(this).then(scoreSubmittal => {
         console.log(scoreSubmittal)
         //what do i do here?
+        //how do i pass in a user as a param?
 
     })
   }
@@ -65,7 +71,6 @@ class GamePlay{
 
     document.querySelector(".close-button").addEventListener("click", function (){
         location.reload();
-        // currentUser = undefined;
     })
 
   }
