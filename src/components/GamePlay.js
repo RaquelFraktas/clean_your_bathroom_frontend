@@ -52,16 +52,13 @@ class GamePlay{
   }
   
   gameEnd = () => {
-    modal.open()
-    modal.modalContent.innerHTML=
     highScoreRender.listUserScores()
+    modal.open()
+
+    
       //create a list and iterate through these scores
 
-
-    document.querySelector(".close-button").addEventListener("click", function (){
-        location.reload();
-        //find another way to reset user and score.
-    })
+    // <button type="button" class="close-button">Close</button>`
 
   }
 

@@ -5,24 +5,31 @@ class HighScoreRenderingService {
   }
 
   listUserScores = () =>{
+    
     api.getUserScores(currentUser)
     .then(data => {
         data.username
-        
+
         let olistOfScores = document.createElement("ol")
         olistOfScores.classList.add("user-highscores")
-        let li = document.createElement('li')
-        olistOfScores.appendChild(li)
         let dataOfScores = data.scores.forEach(score => {
-          li.innerHTML = score.points
-          //for const of blah blah 
-        })
-        //can create another .then to add the modal inner html asynchronously
+          let li = document.createElement('li')
+           li.innerHTML = score.points
+           olistOfScores.appendChild(li)}
+
+        )
+
         modal.modalContent.innerHTML=`
         <h1>TIME'S UP</h1>
         Your highscores:
-          ${dataOfScores}
+          
         <button type="button" class="close-button">Close</button>`
+       
+        document.querySelector(".modal-content").appendChild(olistOfScores)
+        document.querySelector(".close-button").addEventListener("click", function (){
+          location.reload();
+          //find another way to reset user and score.
+      })
     })
   }
 
