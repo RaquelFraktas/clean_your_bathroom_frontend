@@ -25,7 +25,7 @@ class HighScoreRenderingService {
         <button type="button" class="close-button">Close</button>`
         modal.modalContent.appendChild(olistOfScores)
         document.querySelector(".close-button").addEventListener("click", function (){
-        ocation.reload();
+        location.reload();
           //find another way to reset user and score.
       })
     })
