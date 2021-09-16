@@ -54,12 +54,6 @@ class GamePlay{
   gameEnd = () => {
     highScoreRender.listUserScores()
     modal.open()
-
-    
-      //create a list and iterate through these scores
-
-    // <button type="button" class="close-button">Close</button>`
-
   }
 
 }
