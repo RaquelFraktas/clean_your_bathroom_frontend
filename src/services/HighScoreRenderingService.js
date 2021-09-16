@@ -7,9 +7,22 @@ class HighScoreRenderingService {
   listUserScores = () =>{
     api.getUserScores(currentUser)
     .then(data => {
-     debugger
         data.username
-        data.scores.forEach(score => score.points)
+        
+        let olistOfScores = document.createElement("ol")
+        olistOfScores.classList.add("user-highscores")
+        let li = document.createElement('li')
+        olistOfScores.appendChild(li)
+        let dataOfScores = data.scores.forEach(score => {
+          li.innerHTML = score.points
+          //for const of blah blah 
+        })
+        //can create another .then to add the modal inner html asynchronously
+        modal.modalContent.innerHTML=`
+        <h1>TIME'S UP</h1>
+        Your highscores:
+          ${dataOfScores}
+        <button type="button" class="close-button">Close</button>`
     })
   }
 

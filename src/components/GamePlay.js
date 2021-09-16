@@ -53,16 +53,10 @@ class GamePlay{
   
   gameEnd = () => {
     modal.open()
-    modal.modalContent.innerHTML=`
-    <h1>TIME'S UP</h1>
-    Your highscores:
-      ${highScoreRender.listUserScores()}
+    modal.modalContent.innerHTML=
+    highScoreRender.listUserScores()
       //create a list and iterate through these scores
- <ul> 
- <li> fdsgfdg</li>
- </ul>
-    <button type="button" class="close-button">Close</button>
-    `
+
 
     document.querySelector(".close-button").addEventListener("click", function (){
         location.reload();
