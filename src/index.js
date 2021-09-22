@@ -20,7 +20,11 @@ const dirtPile = document.getElementById("dirt-pile")
 const handSplatter1 = document.getElementById("hand-splatter-1")
 const handSplatter2 = document.getElementById("hand-splatter-2")
 
+// const closeButton = document.querySelector(".close");
+const olistOfScores = document.createElement("ol")
+const mainPageButtons = document.querySelector("#buttons-for-main")
 
 User.renderLogIn()
+HighScoreRenderingService.displayAllTopScores()
 
 

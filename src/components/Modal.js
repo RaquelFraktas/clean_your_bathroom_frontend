@@ -16,4 +16,5 @@ class Modal {
     this.modal.style.display= "none"
   }
 
+
 }

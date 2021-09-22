@@ -9,11 +9,10 @@ class User{
   }
 
   static renderLogIn = () => {
-    const logInButton = document.querySelector("#log-in-button");
     const logIn = document.createElement("button");
-    logInButton.append(logIn);
+    mainPageButtons.append(logIn);
     logIn.innerText = "Click here to log in and play";
-    logInButton.addEventListener("click", this.logInForm)
+    logIn.addEventListener("click", this.logInForm)
   }
 
    static logInForm = (e) => {

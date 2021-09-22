@@ -6,6 +6,14 @@ body {
   text-align: center;
 }
 
+#buttons-for-main{
+  display: grid;
+  grid-auto-flow: column;
+  grid-column-gap: 60px;
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
 #wrapper {
   box-shadow: 0 0 10px rgba(0,0,0,.3);
   margin: 16px auto;
@@ -96,7 +104,6 @@ body {
     left: 80%;
 }
 
-
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
@@ -117,7 +124,7 @@ body {
 .modal-content {
   background-color: #fefefe;
   margin: auto;
-  padding: 20px;
+  padding: 30px;
   border: 1px solid #888;
   width: 80%;
   position: relative;
@@ -127,11 +134,11 @@ body {
 .close {
   color: #aaaaaa;
   /* float: right; */
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 14px;
   position: absolute;
   bottom: 5%;
   left: 50%;
+  margin: auto;
 }
 
 .close:hover,
