@@ -6,11 +6,16 @@ let currentUser;
 const api= new ApiService("http://localhost:3000")
 const modal = new Modal()
 const gamePlay = new GamePlay()
-const highScoreRender = new HighScoreRenderingService()
+const highScoreRender = new HighScoreRendering()
 
 const wrapper = document.querySelector("#wrapper")
+const olistOfScores = document.createElement("ol")
+const mainPageButtons = document.querySelector("#buttons-for-main")
+
 const usernameDisplay =  document.querySelector(".username")
 const countdown = document.querySelector("#countdown")
+
+//list of dirty items
 const dirtyItems = document.querySelector(".needs-cleaning")
 const toiletGerms = document.querySelector("#toilet-germs")
 const tubDirt = document.querySelector("#tub-dirt")
@@ -20,11 +25,11 @@ const dirtPile = document.getElementById("dirt-pile")
 const handSplatter1 = document.getElementById("hand-splatter-1")
 const handSplatter2 = document.getElementById("hand-splatter-2")
 
-// const closeButton = document.querySelector(".close");
-const olistOfScores = document.createElement("ol")
-const mainPageButtons = document.querySelector("#buttons-for-main")
+const arrayOfDirtyItems = [toiletGerms, tubDirt, tubDirt, dirtyLaundry, dirtyMirror, dirtPile, handSplatter1, handSplatter2]
+
+
 
 User.renderLogIn()
-HighScoreRenderingService.displayAllTopScores()
+HighScoreRendering.displayAllTopScores()
 
 

@@ -1,4 +1,4 @@
-class HighScoreRenderingService {
+class HighScoreRendering {
 
   constructor(user){
       this.user= user

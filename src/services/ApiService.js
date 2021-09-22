@@ -4,9 +4,6 @@ class ApiService {
         this.api = api
     }
 
-
-  // getUsers = () => fetch("http://localhost:3000/users").then(res=> res.json());
-
   createUser = (newUser)=> {
     // newUser.id = usernameDisplay.id
     return fetch(this.api + "/users", {
@@ -37,7 +34,6 @@ class ApiService {
     return fetch(this.api + "/users/" + user.id)
     .then(response => response.json())
     }
-  
 
   getAllTopScores = () => {
     return fetch(this.api + "/scores")
@@ -48,7 +44,3 @@ class ApiService {
   
 //why do i have to write return for each statement?
 
-  
-  
-  // fetch(this.api + "/users/" +currentUser.id,
-  // for scores
