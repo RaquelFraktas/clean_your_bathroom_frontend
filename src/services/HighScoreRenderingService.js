@@ -4,31 +4,37 @@ class HighScoreRenderingService {
       this.user= user
   }
 
-  listUserScores = () =>{
-    
+  renderUserScores = () =>{
     api.getUserScores(currentUser)
     .then(data => {
-        data.username
-
-        let olistOfScores = document.createElement("ol")
-        olistOfScores.classList.add("user-highscores")
-        let dataOfScores = data.scores.forEach(score => {
+      let olistOfScores = document.createElement("ol")
+      olistOfScores.classList.add("user-highscores")
+        data.scores.forEach(score => {
           let li = document.createElement('li')
            li.innerHTML = score.points
            olistOfScores.appendChild(li)}
         )
 
-        modal.modalContent.innerHTML=`
-        <h1>TIME'S UP</h1>
-        Your highscores:
-          
-        <button type="button" class="close-button">Close</button>`
-        modal.modalContent.appendChild(olistOfScores)
-        document.querySelector(".close-button").addEventListener("click", function (){
-        location.reload();
-          //find another way to reset user and score.
-      })
-    })
-  }
+      
+      modal.open()
+      modal.modalContent.innerHTML=`
+          <h1>TIME'S UP</h1>
+          Your highscores:
+            
+          <button type="button" class="close">Close</button>`
+          modal.modalContent.appendChild(olistOfScores)
+          document.querySelector(".close").addEventListener("click", function (){
+          modal.close()
+          location.reload();
+          })
+        })
+    }
+    
+          // document.querySelector("#wrapper").location.reload();
+        // usernameDisplay.innerText= "Log in to play!";
+        // gamePlay
+        // document.querySelector("#points").innerHTML= 0
+        //make a function that runs all my dirty image elements
 
+  
 }

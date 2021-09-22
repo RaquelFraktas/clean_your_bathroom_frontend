@@ -21,7 +21,6 @@ const handSplatter1 = document.getElementById("hand-splatter-1")
 const handSplatter2 = document.getElementById("hand-splatter-2")
 
 
-
 User.renderLogIn()
 
 

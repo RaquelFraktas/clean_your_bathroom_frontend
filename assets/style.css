@@ -87,9 +87,9 @@ body {
     position: absolute;
     z-index: 2;
     width: 100px;
-	height: 55px;
-	background-color: black;
-	margin: auto;
+	  height: 55px;
+	  background-color: black;
+	  margin: auto;
     color: white;
     border:#0FF thin solid;
     top: 20%;
@@ -120,14 +120,18 @@ body {
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
+  position: relative;
 }
 
 /* The Close Button */
 .close {
   color: #aaaaaa;
-  float: right;
-  font-size: 28px;
+  /* float: right; */
+  font-size: 16px;
   font-weight: bold;
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
 }
 
 .close:hover,

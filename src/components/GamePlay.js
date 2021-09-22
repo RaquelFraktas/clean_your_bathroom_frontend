@@ -35,7 +35,7 @@ class GamePlay{
       // this.user = currentUser
       this.gameOver = true
       this.addPoints()
-      this.gameEnd()
+   
     }, 10000);
   }
 
@@ -48,12 +48,15 @@ class GamePlay{
   }
 
    addPoints = () => {
-    api.addScore(this) 
+    api.addScore(this)
+    .then( response=>
+      this.gameEnd(response))
+      //why do i need this reponse?
+      //why does this work? without it, the newly rendered score wasnt showing up on the user's high scores unless the page refreshed.
   }
   
   gameEnd = () => {
-    highScoreRender.listUserScores()
-    modal.open()
+    highScoreRender.renderUserScores()
   }
 
 }
