@@ -8,31 +8,25 @@ class GamePlay{
 
   beginGame = (user) => {
     this.user= user
-
-    for(let i = 0; i< arrayOfDirtyItems.length; i++){
-      let dirtyItem = arrayOfDirtyItems[i][0]
-      dirtyItem.addEventListener("click", ()=>{
-        this.addPointsAndRemoveElement(arrayOfDirtyItems[i][1], dirtyItem)
-      })
-    } 
-
+    domService.addEventListeners(this)
     setTimeout(() => { 
       this.gameOver = true
       this.addPoints()
     }, 10000);
   }
 
-  
 
   addPointsAndRemoveElement = (points, element) => {
     if (!this.gameOver){
       this.allPoints += points;
+      //allPoints saves instances from the previous user's score. get it out!!
       element.remove()
       document.querySelector("#points").innerHTML= this.allPoints +" points";
     }
   }
 
-   addPoints = () => {
+
+  addPoints = () => {
     api.addScore(this)
     .then( response=>
       this.gameEnd(response))
@@ -44,4 +38,6 @@ class GamePlay{
     highScoreRender.renderUserScores()
   }
 
+  static clear = ()=> GamePlay.all =[]
+  
 }

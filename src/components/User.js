@@ -3,9 +3,9 @@ class User{
   static all = []
 
   constructor(username, id){
-      this.username = username
-      this.id = id
-      this.constructor.all.push(this)
+    this.username = username
+    this.id = id
+    this.constructor.all.push(this)
   }
 
   static renderLogIn = () => {
@@ -30,7 +30,7 @@ class User{
   };
 
 
-  static setUser = (username) => {
+  static setUserAndStartCountdown = (username) => {
     usernameDisplay.innerText= username
     // this starts the countdown once you're logged in
     let seconds = document.getElementById("countdown").textContent;
@@ -42,8 +42,6 @@ class User{
   }
 
 
-  // static find = (id) => this.all.find(user => user.id == id)
-
   static handleSubmit = (e) =>{
     e.preventDefault()
     let logInCredentials= {
@@ -54,13 +52,18 @@ class User{
       this.id = user.id
       usernameDisplay.setAttribute("data-id", this.id)   
       currentUser = user 
-      this.setUser(logInCredentials.username)
+      this.setUserAndStartCountdown(logInCredentials.username)
       modal.close()
       gamePlay.beginGame(currentUser)
     })
-    
-    
-  };
+  }
+
+
+  resetUser= () => {
+    usernameDisplay.innerText= "Log in to play!";
+    document.querySelector("#points").innerHTML= 0
+    gamePlay
+  }
 
 
 }

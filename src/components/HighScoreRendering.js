@@ -22,14 +22,15 @@ class HighScoreRendering {
         modal.modalContent.appendChild(olistOfScores)
         document.querySelector(".close").addEventListener("click", function (){
         modal.close()
-        location.reload();
+        domService.renderDirtIntoBathroom()
+        userClass.resetUser()
+        DomService.setCountDownDisplay()
+        GamePlay.clear()
+    
+        // location.reload();
         })
       })
     }
-      // usernameDisplay.innerText= "Log in to play!";
-      // gamePlay
-      // document.querySelector("#points").innerHTML= 0
-      //make a function that runs all my dirty image elements
 
 
   static displayAllTopScores = () => {
