@@ -25,7 +25,7 @@ const dirtPile = document.getElementById("dirt-pile")
 const handSplatter1 = document.getElementById("hand-splatter-1")
 const handSplatter2 = document.getElementById("hand-splatter-2")
 
-const arrayOfDirtyItems = [toiletGerms, tubDirt, tubDirt, dirtyLaundry, dirtyMirror, dirtPile, handSplatter1, handSplatter2]
+const arrayOfDirtyItems = [[toiletGerms, 50], [tubDirt, 125], [dirtyLaundry, 75], [dirtyMirror, 50], [dirtPile, 200],  [handSplatter1, 100], [handSplatter2, 100]]
 
 
 
