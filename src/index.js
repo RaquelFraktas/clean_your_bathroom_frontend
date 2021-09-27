@@ -2,6 +2,7 @@ console.log("hello world")
 
 //creates a user variable to store data in to pass through to APIs
 let currentUser;
+let hasEventListenerInitializer= false
 
 //variable names for new class initializations
 const api= new ApiService("http://localhost:3000")

@@ -4,8 +4,8 @@ class ApiService {
         this.api = api
     }
 
+
   createUser = (newUser)=> {
-    // newUser.id = usernameDisplay.id
     return fetch(this.api + "/users", {
     method: 'POST', 
     headers: {
@@ -14,8 +14,8 @@ class ApiService {
     },
       body: JSON.stringify(newUser)
     })
-      .then(response => response.json())
-    }
+    .then(response => response.json())
+  }
 
 
   addScore = (object) => {
@@ -27,19 +27,22 @@ class ApiService {
      },
        body: JSON.stringify(object)
      })
-       .then(response => response.json())  
-     }
+    .then(response => response.json())  
+  }
+
 
   getUserScores = (user) => {
     return fetch(this.api + "/users/" + user.id)
     .then(response => response.json())
     }
 
+
   getAllTopScores = () => {
     return fetch(this.api + "/scores")
     .then(response => response.json())
   }
 
+  
 }
   
 //why do i have to write return for each statement?

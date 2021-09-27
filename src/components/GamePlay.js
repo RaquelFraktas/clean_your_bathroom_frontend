@@ -6,17 +6,19 @@ class GamePlay{
     this.user;
   }
 
+
   beginGame = (user) => {
     this.user= user
     domService.renderDirtIntoBathroom()
     if (this.user){
-      domService.addEventListeners(this)
+      if (!hasEventListenerInitializer){
+        domService.addEventListeners(this)
+        hasEventListenerInitializer = true
+      }
     }
-    
     setTimeout(() => { 
       this.gameOver = true
       this.addPoints()
-      // domService.clearDirtInBathroom()
     }, 10000);
   }
 
@@ -45,12 +47,13 @@ class GamePlay{
   })
   }
 
+
   clear = ()=> {
-    //why does it render the previous user's score and double's the current user's score?
     this.user = undefined
     this.gameOver = false
     this.allPoints = 0
     domService.renderDirtIntoBathroom()
   }
+  
   
 }

@@ -41,7 +41,7 @@ class HighScoreRendering {
       api.getAllTopScores()
       .then(data =>{
         modal.modalContent.innerHTML= ""
-        //this resets the innerHTML to get rid of the bug where the event listener was added twice
+        //this resets the innerHTML to get rid of the bug where the close event listener was added twice
         const olistOfTopScores = document.createElement("ol")
         data.forEach(score => {
           if (score.points >= 700){
