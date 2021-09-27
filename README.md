@@ -22,7 +22,7 @@ There are four fetch calls being made
 * On the main page, you can see every user that scored 700 + points
 
 
-** For better usability, play this game on a fullscreen 
+# For better usability, play this game on a fullscreen 
 
 
 The backend repo for this game is here:
