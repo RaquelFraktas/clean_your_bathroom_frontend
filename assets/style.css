@@ -6,6 +6,13 @@ body {
   text-align: center;
 }
 
+button:hover{
+ 
+  color: #aaaaaa;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 #buttons-for-main{
   display: grid;
   grid-auto-flow: column;
@@ -21,6 +28,10 @@ body {
   padding: 2.25%; /* 18px / 800px */
   width: 85%;
   position: relative;
+}
+
+ol li {
+  padding: 3px;
 }
 
 #background-image {
@@ -104,9 +115,6 @@ body {
     left: 80%;
 }
 
-  /* .needs-cleaning{
-    display:none;
-  } */
 
 /* The Modal (background) */
 .modal {
@@ -126,7 +134,7 @@ body {
 /* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal */
 /* Modal Content */
 .modal-content {
-  background-color: #fefefe;
+  background-color: rgba(255, 255, 255, 0.988);
   margin: auto;
   padding: 30px;
   border: 1px solid #888;
@@ -137,7 +145,6 @@ body {
 /* The Close Button */
 .close {
   color: #aaaaaa;
-  /* float: right; */
   font-size: 14px;
   position: absolute;
   bottom: 5%;

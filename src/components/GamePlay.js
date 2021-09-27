@@ -1,5 +1,5 @@
 class GamePlay{
-
+//spacing recommendations?
   constructor (){
     this.gameOver = false
     this.allPoints = 0
@@ -44,7 +44,7 @@ class GamePlay{
     highScoreRender.renderUserScores()
     arrayOfDirtyItems.forEach(dirt =>{
       dirtyItems.append(dirt[0])
-  })
+    })
   }
 
 

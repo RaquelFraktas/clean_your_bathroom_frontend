@@ -4,6 +4,7 @@ class HighScoreRendering {
       this.user= user
   }
 
+
   renderUserScores = () =>{
     api.getUserScores(currentUser)
     .then(data => {
@@ -13,9 +14,8 @@ class HighScoreRendering {
            li.innerHTML = score.points
            olistOfScores.appendChild(li)
         })
-
-    modal.open()
-    modal.modalContent.innerHTML=`
+      modal.open()
+      modal.modalContent.innerHTML=`
         <h1>TIME'S UP</h1>
         Your Scores:
         <br> 
@@ -36,12 +36,10 @@ class HighScoreRendering {
     const topScores = document.createElement("button");
     mainPageButtons.append(topScores);
     topScores.innerText = "Click here to view all top scores";
-    
     topScores.addEventListener("click", function(){
       api.getAllTopScores()
       .then(data =>{
-        modal.modalContent.innerHTML= ""
-        //this resets the innerHTML to get rid of the bug where the close event listener was added twice
+        modal.modalContent.innerHTML= "<h1>All Top Scores</h1>"
         const olistOfTopScores = document.createElement("ol")
         data.forEach(score => {
           if (score.points >= 700){

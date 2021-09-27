@@ -2,11 +2,13 @@ class User{
 
   static all = []
 
+
   constructor(username, id){
     this.username = username
     this.id = id
     this.constructor.all.push(this)
   }
+
 
   static renderLogIn = () => {
     const logIn = document.createElement("button");

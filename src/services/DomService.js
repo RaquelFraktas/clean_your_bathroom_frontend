@@ -1,5 +1,6 @@
 class DomService {
 
+  
   constructor(){
     this.gameOver = false
   }
