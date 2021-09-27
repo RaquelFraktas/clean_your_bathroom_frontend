@@ -8,10 +8,15 @@ class GamePlay{
 
   beginGame = (user) => {
     this.user= user
-    domService.addEventListeners(this)
+    domService.renderDirtIntoBathroom()
+    if (this.user){
+      domService.addEventListeners(this)
+    }
+    
     setTimeout(() => { 
       this.gameOver = true
       this.addPoints()
+      // domService.clearDirtInBathroom()
     }, 10000);
   }
 
@@ -19,7 +24,6 @@ class GamePlay{
   addPointsAndRemoveElement = (points, element) => {
     if (!this.gameOver){
       this.allPoints += points;
-      //allPoints saves instances from the previous user's score. get it out!!
       element.remove()
       document.querySelector("#points").innerHTML= this.allPoints +" points";
     }
@@ -36,8 +40,17 @@ class GamePlay{
   
   gameEnd = () => {
     highScoreRender.renderUserScores()
+    arrayOfDirtyItems.forEach(dirt =>{
+      dirtyItems.append(dirt[0])
+  })
   }
 
-  static clear = ()=> GamePlay.all =[]
+  clear = ()=> {
+    //why does it render the previous user's score and double's the current user's score?
+    this.user = undefined
+    this.gameOver = false
+    this.allPoints = 0
+    domService.renderDirtIntoBathroom()
+  }
   
 }

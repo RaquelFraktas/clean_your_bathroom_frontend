@@ -11,8 +11,9 @@ class HighScoreRendering {
         data.scores.forEach(score => {
           let li = document.createElement('li')
            li.innerHTML = score.points
-           olistOfScores.appendChild(li)}
-        )
+           olistOfScores.appendChild(li)
+        })
+
     modal.open()
     modal.modalContent.innerHTML=`
         <h1>TIME'S UP</h1>
@@ -22,11 +23,9 @@ class HighScoreRendering {
         modal.modalContent.appendChild(olistOfScores)
         document.querySelector(".close").addEventListener("click", function (){
         modal.close()
-        domService.renderDirtIntoBathroom()
+        domService.removeAllChildNodes(document.querySelector(".user-highscores"))
         userClass.resetUser()
         DomService.setCountDownDisplay()
-        GamePlay.clear()
-    
         // location.reload();
         })
       })
@@ -41,6 +40,8 @@ class HighScoreRendering {
     topScores.addEventListener("click", function(){
       api.getAllTopScores()
       .then(data =>{
+        modal.modalContent.innerHTML= ""
+        //this resets the innerHTML to get rid of the bug where the event listener was added twice
         const olistOfTopScores = document.createElement("ol")
         data.forEach(score => {
           if (score.points >= 700){
@@ -50,7 +51,6 @@ class HighScoreRendering {
             modal.modalContent.appendChild(olistOfTopScores)
           }
         })
-        
         modal.open()
         modal.modalContent.innerHTML += `
         <button type="button" class="close">Close</button>`

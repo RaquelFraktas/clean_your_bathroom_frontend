@@ -5,14 +5,16 @@ class DomService {
   }
 
 
+//   clearDirtInBathroom = ()=>{
+//     arrayOfDirtyItems.forEach(dirt =>{
+//         dirt[0].remove()
+//     })
+//   }
+
   renderDirtIntoBathroom = () =>{
     arrayOfDirtyItems.forEach(dirt =>{
-        dirtyItems.appendChild(dirt[0]) 
+        dirt[0].style.display= "block"
     })
-    // for(let i = 0; i< arrayOfDirtyItems; i++){
-    //   dirtyItems.appendChild(arrayOfDirtyItems[i][0])
-    // } why wont this work?
-    // this.addEventListeners()
   }
 
   static setCountDownDisplay = () => {
@@ -23,9 +25,17 @@ class DomService {
     for(let i = 0; i< arrayOfDirtyItems.length; i++){
       let dirtyItem = arrayOfDirtyItems[i][0]
       dirtyItem.addEventListener("click", ()=>{
-        game.addPointsAndRemoveElement(arrayOfDirtyItems[i][1], dirtyItem)
+          if(gamePlay.user){
+            game.addPointsAndRemoveElement(arrayOfDirtyItems[i][1], dirtyItem)
+          } 
       })
     } 
+  }
+
+  removeAllChildNodes = (parent) =>{
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
   }
 
 

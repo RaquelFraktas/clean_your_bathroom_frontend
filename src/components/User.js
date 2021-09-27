@@ -62,7 +62,8 @@ class User{
   resetUser= () => {
     usernameDisplay.innerText= "Log in to play!";
     document.querySelector("#points").innerHTML= 0
-    gamePlay
+    currentUser = undefined
+    gamePlay.clear()
   }
 
 
