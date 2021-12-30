@@ -35,6 +35,6 @@ const arrayOfDirtyItems = [[toiletGerms, 50], [tubDirt, 125], [dirtyLaundry, 75]
 User.renderLogIn()
 HighScoreRendering.displayAllTopScores()
 DomService.setCountDownDisplay()
-
+DomService.darkMode()
 
 
