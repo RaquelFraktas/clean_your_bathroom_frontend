@@ -36,5 +36,23 @@ class DomService {
     }
   }
 
+  static darkMode = () => {
+    let darkModeBtn = document.createElement("button");
+    mainPageButtons.append(darkModeBtn);
+    darkModeBtn.innerText = "Teal Mode"
+    darkModeBtn.addEventListener("click", ()=> {
+      if (document.body.style.backgroundColor == ""){
+        document.body.style.backgroundColor = "#52B5B5"
+      } else if (document.body.style.backgroundColor != ""){
+        document.body.style.backgroundColor = ""
+      }
+    //could make a light/dark mode class
+    })
 
+
+
+  }
+
+//can make a ui subolder- dom service can be in ui class
+//lightmode/dark mode is a service class
 }
